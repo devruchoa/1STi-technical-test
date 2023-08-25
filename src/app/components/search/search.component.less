@@ -1,0 +1,37 @@
+@import '../../../styles.less';
+
+.container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  padding-top: 0;
+  border-bottom: 1px solid @color-main;
+
+  &-input {
+    color: @color-text;
+    width: 90vw;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 2px;
+  }
+
+  &-icon {
+    position: absolute;
+    right: 40px;
+    top: 28%;
+    transform: translateY(-50%);
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+  }
+}
+
+
+@media (min-width: @breakpoint) {
+  .container {
+    width: 45vw;
+    margin: auto;
+  }
+}
