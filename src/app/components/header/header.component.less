@@ -7,7 +7,18 @@
     color: @color-main;
     text-align: left;
     letter-spacing: 2px;
-    font-size: @fs-title;
+    font-size: @fs-title-sm;
+  }
+}
+
+@media (min-width: 430px) {
+  .header {
+    padding: @padding-lg;
+
+    .title {
+      text-align: center;
+      font-size: @fs-title-lg;
+    }
   }
 }
 
