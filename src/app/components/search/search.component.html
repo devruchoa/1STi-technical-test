@@ -1,4 +1,8 @@
 <section class="container">
-  <input class="container-input" type="text" placeholder="Insira aqui o nome da cidade">
-  <img class="container-icon" src="../../../assets/icons/lupa.svg" alt="Ícone de lupa">
+  <input class="container-input" type="text" [(ngModel)]="cityName" placeholder="Insira aqui o nome da cidade">
+  <img (click)="searchCity()" class="container-icon" src="../../../assets/icons/lupa.svg" alt="Ícone de lupa">
 </section>
+
+<div *ngIf="weatherData">
+  <h2>{{ weatherData.name }}</h2>
+</div>

@@ -1,0 +1,10 @@
+<section class="overview">
+  <h3 class="overview-title">Capitais</h3>
+  <div *ngFor="let city of capitals" class="overview-cities">
+    <div *ngIf="weatherDataMap.get(city)" class="overview-cities-temperature">
+      <p>{{ weatherDataMap.get(city)?.minTemperature }}°C</p>
+      <p>{{ weatherDataMap.get(city)?.maxTemperature }}°C</p>
+    </div>
+    <h4>{{ city }}</h4>
+  </div>
+</section>

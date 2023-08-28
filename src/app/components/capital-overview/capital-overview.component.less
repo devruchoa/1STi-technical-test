@@ -1,0 +1,37 @@
+@import '../../../styles.less';
+
+.overview {
+  padding: @padding-sm;
+  color: @color-text;
+  font-weight: bold;
+
+  &-title {
+    color: @color-main;
+    font-size: @fs-title-secondary;
+    letter-spacing: 2px;
+    margin-bottom: 1.5rem;
+  }
+
+  &-cities {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    margin-bottom: 1.5rem;
+
+    &-temperature {
+      display: flex;
+
+      p {
+        width: 50%;
+      }
+    }
+  }
+}
+
+@media (min-width: @breakpoint) {
+  .overview {
+    width: 50%;
+    margin: auto;
+    margin-right: 14rem;
+  }
+}
