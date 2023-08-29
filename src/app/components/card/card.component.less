@@ -1,0 +1,47 @@
+@import '../../../styles.less';
+
+.card {
+  background-color: @color-main;
+  padding: 1.5rem;
+  font-weight: bold;
+  color: @color-text;
+  margin-bottom: 1rem;
+
+  > * {
+    margin-bottom: 1rem;
+  }
+
+  &-header {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &-title {
+    font-size: @fs-title-secondary;
+    display: flex;
+    gap: 1rem;
+  }
+
+  &-temperature {
+    display: flex;
+    gap: 1rem;
+
+    div {
+      display: flex;
+
+    }
+  }
+
+  &-others {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: @breakpoint) {
+  .card {
+    width: 40%;
+    margin: 0 auto 2rem auto;
+  }
+}

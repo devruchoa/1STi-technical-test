@@ -9,13 +9,15 @@ import { SearchComponent } from './components/search/search.component';
 import { WeatherApiService } from './components/weather-api.service';
 import { FormsModule } from '@angular/forms';
 import { CapitalOverviewComponent } from './components/capital-overview/capital-overview.component';
+import { CardComponent } from './components/card/card.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     SearchComponent,
-    CapitalOverviewComponent
+    CapitalOverviewComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,

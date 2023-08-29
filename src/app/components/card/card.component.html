@@ -1,0 +1,29 @@
+<section class="card">
+  <div class="card-header">
+    <span>{{ weatherData.city }}, {{ weatherData.country }}</span>
+    <input type="image" src="../../../assets/icons/close.svg" alt="Fechar card" (click)="closeCard()">
+  </div>
+
+  <div class="card-title">
+    <span>{{ weatherData.temperature }}°C</span>
+    <span>{{ weatherData.status }}</span>
+  </div>
+
+  <div class="card-temperature">
+    <div>
+      <img src="../../../assets/icons/arrow-down.svg" alt="Seta para baixo">
+      <span>{{ weatherData.minTemperature }}°</span>
+      <img src="../../../assets/icons/arrow-up.svg" alt="Seta para cima">
+      <span>{{ weatherData.maxTemperature }}°</span>
+    </div>
+
+    <div>
+      <span>Sensação {{ weatherData.thermalSensation }}°</span>
+    </div>
+  </div>
+
+  <div class="card-others">
+    <span>Vento {{ weatherData.windSpeed }}km/h</span>
+    <span>Humidade {{ weatherData.humidity }}%</span>
+  </div>
+</section>

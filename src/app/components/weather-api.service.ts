@@ -2,12 +2,13 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, map } from 'rxjs';
 import { Weather } from './weather';
+import { environment } from 'src/environments/enviroment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class WeatherApiService {
-  private apiKey = '449d4163671c1487c4729cc196a2149f';
+  private apiKey = environment.apiKey;
   private apiUrl = 'https://api.openweathermap.org/data/2.5/weather';
 
   constructor(private http: HttpClient) { }
@@ -20,6 +21,10 @@ export class WeatherApiService {
     );
   }
 
+  private capitalizeFirstLetter(str: string): string {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  }
+
   private mapToWeather(data: any): Weather {
     return {
       city: data.name,
@@ -28,7 +33,7 @@ export class WeatherApiService {
       temperature: parseInt(data.main.temp),
       minTemperature: parseInt(data.main.temp_min),
       maxTemperature: parseInt(data.main.temp_max),
-      status: data.weather[0].description,
+      status: this.capitalizeFirstLetter(data.weather[0].description),
       windSpeed: parseInt(data.wind.speed),
       thermalSensation: parseInt(data.main.feels_like),
       humidity: parseInt(data.main.humidity)

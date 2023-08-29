@@ -1,3 +1,4 @@
+import { Weather } from '../weather';
 import { WeatherApiService } from './../weather-api.service';
 import { Component } from '@angular/core';
 
@@ -8,14 +9,21 @@ import { Component } from '@angular/core';
 })
 export class SearchComponent {
   cityName: string = '';
-  weatherData: any;
+  weather: Weather | null = null;
 
   constructor(private weatherApiService: WeatherApiService) {  }
 
   searchCity() {
     this.weatherApiService.getWeatherByCity(this.cityName)
       .subscribe(data => {
-        this.weatherData = data;
+        this.weather = data;
+      },
+      error => {
+        console.log(error);
       });
+  }
+
+  closeCard() {
+    this.weather = null;
   }
 }
